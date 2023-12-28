@@ -12,8 +12,14 @@ SCOPE_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPE_CREDS)
 SHEET = GSPREAD_CLIENT.open('snake-game-scoreboard')
 
-scoreboard = SHEET.worksheet('scoreboard')
+def get_scoreboard():
+    """
+    Get the scoreboard from the spreadsheet
+    """
+    scoreboard = SHEET.worksheet('scoreboard')
 
-data = scoreboard.get_all_values()
+    data = scoreboard.get_all_values()
 
-print(data)
+    return data
+
+get_scoreboard()
