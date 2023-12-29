@@ -103,3 +103,48 @@ def check_collision_with_self(head, snake):
     return head in snake[:-1]
 
 
+def game_loop():
+    """
+    The main game loop.
+    Handles key inputs, updates the game state, draws the game,
+    and checks for game over conditions.
+    Returns the final score when the game is over.
+    """
+    term = Terminal()
+    global Snake, Food, direction
+
+    score = 0
+    base_speed = 0.1
+    speed_increase_factor = 0.005
+
+    with term.cbreak(), term.hidden_cursor():
+        while True:
+            speed = max(0.05, base_speed - speed_increase_factor * score)
+            key = term.inkey(timeout=speed)
+            if key.is_sequence:
+                direction = get_direction(key, direction)
+
+            head = Snake[-1]
+            next_head = Point(head.y + direction.y, head.x + direction.x)
+
+            Snake.append(next_head)
+            if next_head == Food:
+                Food = generate_food(Snake, term)
+                score += 10
+            else:
+                Snake.pop(0)
+
+            print(term.home + term.clear)
+            draw_snake(Snake, term)
+            draw_food(Food, term)
+
+            print(f"{score}")
+
+            if (check_collision_with_wall(next_head, term) or 
+            check_collision_with_self(next_head, Snake)):
+                return score
+
+
+
+if __name__ == '__main__':
+    game_loop()
