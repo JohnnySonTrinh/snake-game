@@ -68,18 +68,32 @@ def show_instructions():
     main()
 
 
+def format_leaderboard(data):
+    """
+    Formats the top 10 entries of the leaderboard into a table.
+    """
+    header = "\033[1m{:<30} {:<15}\033[0m".format("Name", "Score")
+    divider = "-" * 47
+    formatted_data = [header, divider]
+
+    top_ten = data[1:11]  # Assuming data[0] contains column headers and skipping it
+    for name, score in top_ten:
+        formatted_data.append("{:<30} {:<15}".format(name, score))
+
+    return "\n".join(formatted_data)
+
+
 def show_leaderboard():
     clear()
-    # Fetch and display leaderboard
     scores = get_scoreboard()
-    print("Leaderboard:")
-    for name, score in scores[1:]:
-        print(f"{name}: {score}")
+    formatted_scores = format_leaderboard(scores)
+    print("Leaderboard (Top 10):")
+    print(formatted_scores)
     print("\nPress 'Enter' to return to the main menu.")
     while True:
-        user_input = input()
-        if user_input == "":
+        if input() == '':
             break
+
         else:
             break
     main()
