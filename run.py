@@ -2,6 +2,7 @@ import gspread
 import os
 from google.oauth2.service_account import Credentials
 from simple_term_menu import TerminalMenu
+from snakegame import game_loop
 
 
 SCOPE = [
@@ -36,8 +37,8 @@ def get_scoreboard():
 
 def start_game():
     clear()
-    # Logic to start the game
-    print("Game starting...")
+    game_loop()
+    clear()
 
 
 def show_instructions():
