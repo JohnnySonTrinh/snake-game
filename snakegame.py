@@ -47,3 +47,14 @@ def get_direction(key, current_direction):
     elif key.name == "KEY_RIGHT" and current_direction != Direction(0, -1):
         return Direction(0, 1)
     return current_direction
+
+
+def generate_food(snake, term):
+    """
+    Generates a new piece of food at a random location
+    not occupied by the snake.
+    """
+    while True:
+        new_food = Point(randrange(1, term.height), randrange(1, term.width))
+        if new_food not in snake:
+            return new_food
