@@ -9,3 +9,15 @@ Snake = [Point(5, 5), Point(5, 6), Point(5, 7)]  # Initial snake position
 Food = Point(randrange(10), randrange(10))  # Initial food position
 Direction = namedtuple('Direction', ['y', 'x'])  # Represents a direction.
 direction = Direction(0, 1)  # Initial direction: right
+
+
+def move_snake(snake, direction):
+    """
+    Moves the snake in the specified direction.
+    Adds a new head to the snake in the direction
+    of movement and removes the tail.
+    """
+    head = snake[-1]
+    new_head = Point(head.y + direction.y, head.x + direction.x)
+    snake.append(new_head)
+    snake.pop(0)
