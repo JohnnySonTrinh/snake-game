@@ -5,6 +5,7 @@ from simple_term_menu import TerminalMenu
 from snakegame import game_loop
 
 
+# Google Sheets API setup
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -19,14 +20,14 @@ SHEET = GSPREAD_CLIENT.open("snake-game-scoreboard")
 
 def clear():
     """
-    Clears the terminal
+    Clears the terminal screen for both Windows ('cls') and Unix ('clear').
     """
     os.system("cls" if os.name == "nt" else "clear")
 
 
 def get_scoreboard():
     """
-    Get the scoreboard from the spreadsheet
+    Retrieves the current leaderboard from the Google Sheets spreadsheet.
     """
     scoreboard = SHEET.worksheet("leaderboard")
 
@@ -35,12 +36,54 @@ def get_scoreboard():
     return data
 
 
+def show_leaderboard():
+    """
+    Retrieves and displays the top 10 leaderboard entries.
+    """
+    clear()
+    scores = get_scoreboard()
+    formatted_scores = format_leaderboard(scores)
+    print("Leaderboard (Top 10):")
+    print(formatted_scores)
+    print("\nPress 'Enter' to return to the main menu.")
+    while True:
+        if input() == '':
+            break
+
+        else:
+            break
+    main()
+
+
+def format_leaderboard(data):
+    """
+    Formats the leaderboard data into a readable table format.
+    """
+    header = "\033[1m{:<30} {:<15}\033[0m".format("Name", "Score")
+    divider = "-" * 47
+    formatted_data = [header, divider]
+
+    top_ten = data[1:11]
+    for name, score in top_ten:
+        formatted_data.append("{:<30} {:<15}".format(name, score))
+
+    return "\n".join(formatted_data)
+
+
 def update_scoreboard(name, score):
+    """
+    Updates the 'scoreboard' worksheet in Google Sheets with
+    the player's name and score.
+    """
     worksheet = SHEET.worksheet("scoreboard")
     worksheet.append_row([name, score])
 
 
 def is_score_a_highscore(player_score, leaderboard):
+    """
+    Determines if the player's score qualifies as a high score.
+    Checks if the score is higher than the lowest score in the top 10.
+    """
     if len(leaderboard) < 10:
         return True
     lowest_highscore = min(int(entry[1]) for entry in leaderboard[1:])
@@ -48,6 +91,10 @@ def is_score_a_highscore(player_score, leaderboard):
 
 
 def start_game():
+    """
+    Starts the snake game, checks the final score,
+    and updates the leaderboard if necessary.
+    """
     clear()
     final_score = game_loop()
     game_loop()
@@ -67,6 +114,10 @@ def start_game():
 
 
 def show_instructions():
+    """
+    Displays the game instructions and waits for
+    the user to return to the main menu.
+    """
     clear()
     print("\033" +
           "================= Instructions for Snake Game =================" +
@@ -93,35 +144,12 @@ def show_instructions():
     main()
 
 
-def format_leaderboard(data):
-    header = "\033[1m{:<30} {:<15}\033[0m".format("Name", "Score")
-    divider = "-" * 47
-    formatted_data = [header, divider]
-
-    top_ten = data[1:11]
-    for name, score in top_ten:
-        formatted_data.append("{:<30} {:<15}".format(name, score))
-
-    return "\n".join(formatted_data)
-
-
-def show_leaderboard():
-    clear()
-    scores = get_scoreboard()
-    formatted_scores = format_leaderboard(scores)
-    print("Leaderboard (Top 10):")
-    print(formatted_scores)
-    print("\nPress 'Enter' to return to the main menu.")
-    while True:
-        if input() == '':
-            break
-
-        else:
-            break
-    main()
-
-
 def main():
+    """
+    Main function to run the terminal-based menu.
+    Allows users to start the game, view instructions,
+    see the leaderboard, or quit.
+    """
     clear()
     print("\033" +
           "================================================================")
