@@ -35,15 +35,39 @@ def get_scoreboard():
     return data
 
 
+def update_scoreboard(name, score):
+    worksheet = SHEET.worksheet("scoreboard")
+    worksheet.append_row([name, score])
+
+
+def is_score_a_highscore(player_score, leaderboard):
+    if len(leaderboard) < 10:
+        return True
+    lowest_highscore = min(int(entry[1]) for entry in leaderboard[1:])
+    return player_score > lowest_highscore
+
+
 def start_game():
     clear()
+    final_score = game_loop()
     game_loop()
     clear()
+
+    leaderboard = get_scoreboard()
+    if is_score_a_highscore(final_score, leaderboard):
+        print(f"\nFinal score: {final_score}")
+        print("\nCongratulations, you made it to the leaderboard!")
+        player_name = input(" Enter your name: ")
+        update_scoreboard(player_name, final_score)
+        exit()
+    else:
+        print("You didn't make it to the leaderboard. Better luck next time!")
+        print(f"Final score: {final_score}")
+        exit()
 
 
 def show_instructions():
     clear()
-    # Logic to show game instructions
     print("\033" +
           "================= Instructions for Snake Game =================" +
           "\033")
@@ -70,14 +94,11 @@ def show_instructions():
 
 
 def format_leaderboard(data):
-    """
-    Formats the top 10 entries of the leaderboard into a table.
-    """
     header = "\033[1m{:<30} {:<15}\033[0m".format("Name", "Score")
     divider = "-" * 47
     formatted_data = [header, divider]
 
-    top_ten = data[1:11]  # Assuming data[0] contains column headers and skipping it
+    top_ten = data[1:11]
     for name, score in top_ten:
         formatted_data.append("{:<30} {:<15}".format(name, score))
 
@@ -102,11 +123,11 @@ def show_leaderboard():
 
 def main():
     clear()
-    print("\033" + 
+    print("\033" +
           "================================================================")
     print("                     Welcome to Snake Game!")
     print("===============================================================" +
-        "\033")
+          "\033")
     print("\nPlease select an option:")
     options = ["Start", "Instructions", "Leaderboards", "Quit"]
     terminal_menu = TerminalMenu(options)
