@@ -15,6 +15,14 @@ SCOPE_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPE_CREDS)
 SHEET = GSPREAD_CLIENT.open('snake-game-scoreboard')
 
+
+def clear():
+    """
+    Clears the terminal
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
 def get_scoreboard():
     """
     Get the scoreboard from the spreadsheet
