@@ -87,10 +87,12 @@ def show_leaderboard():
 
 def main():
     clear()
-    print("\033[1;32;40m" + "===================================")
-    print("     Welcome to Snake Game!")
-    print("===================================" + "\033[0;37;40m")
-    print("Created by Johnny")
+    print("\033" + 
+          "================================================================")
+    print("                     Welcome to Snake Game!")
+    print("===============================================================" +
+        "\033")
+    print("\nPlease select an option:")
     options = ["Start", "Instructions", "Leaderboards", "Quit"]
     terminal_menu = TerminalMenu(options)
     menu_entry_index = terminal_menu.show()
