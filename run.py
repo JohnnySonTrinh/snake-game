@@ -66,3 +66,20 @@ def show_instructions():
         else:
             break
     main()
+
+
+def show_leaderboard():
+    clear()
+    # Fetch and display leaderboard
+    scores = get_scoreboard()
+    print("Leaderboard:")
+    for name, score in scores[1:]:
+        print(f"{name}: {score}")
+    print("\nPress 'Enter' to return to the main menu.")
+    while True:
+        user_input = input()
+        if user_input == "":
+            break
+        else:
+            break
+    main()
