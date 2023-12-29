@@ -106,11 +106,11 @@ def start_game():
         print("\nCongratulations, you made it to the leaderboard!")
         player_name = input("Enter your name:\n")
         update_scoreboard(player_name, final_score)
-        exit()
+        exit("\nThanks for playing!")
     else:
         print("You didn't make it to the leaderboard. Better luck next time!")
         print(f"Final score: {final_score}")
-        exit()
+        exit("\nThanks for playing!")
 
 
 def show_instructions():
