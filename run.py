@@ -1,5 +1,8 @@
 import gspread
+import os
 from google.oauth2.service_account import Credentials
+from simple_term_menu import TerminalMenu
+
 
 SCOPE = [
     'https://www.googleapis.com/auth/spreadsheets',
