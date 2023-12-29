@@ -8,3 +8,4 @@ node_modules/
 .github/
 .DS_Store
 creds.json
+test.py
