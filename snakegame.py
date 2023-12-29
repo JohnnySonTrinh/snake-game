@@ -21,3 +21,13 @@ def move_snake(snake, direction):
     new_head = Point(head.y + direction.y, head.x + direction.x)
     snake.append(new_head)
     snake.pop(0)
+
+
+def check_food(snake, food):
+    """
+    Checks if the snake's head is at the same location as the food.
+    Returns True if the snake has eaten the food.
+    """
+    if snake[-1] == food:
+        return True
+    return False
