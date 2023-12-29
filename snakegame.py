@@ -31,3 +31,19 @@ def check_food(snake, food):
     if snake[-1] == food:
         return True
     return False
+
+
+def get_direction(key, current_direction):
+    """
+    Changes the snake's direction based on the key pressed.
+    Prevents the snake from reversing directly into itself.
+    """
+    if key.name == "KEY_UP" and current_direction != Direction(1, 0):
+        return Direction(-1, 0)
+    elif key.name == "KEY_DOWN" and current_direction != Direction(-1, 0):
+        return Direction(1, 0)
+    elif key.name == "KEY_LEFT" and current_direction != Direction(0, 1):
+        return Direction(0, -1)
+    elif key.name == "KEY_RIGHT" and current_direction != Direction(0, -1):
+        return Direction(0, 1)
+    return current_direction
