@@ -83,3 +83,29 @@ def show_leaderboard():
         else:
             break
     main()
+
+
+def main():
+    clear()
+    print("\033[1;32;40m" + "===================================")
+    print("     Welcome to Snake Game!")
+    print("===================================" + "\033[0;37;40m")
+    print("Created by Johnny")
+    options = ["Start", "Instructions", "Leaderboards", "Quit"]
+    terminal_menu = TerminalMenu(options)
+    menu_entry_index = terminal_menu.show()
+    choice = options[menu_entry_index]
+
+    if choice == "Start":
+        start_game()
+    elif choice == "Instructions":
+        show_instructions()
+    elif choice == "Leaderboards":
+        show_leaderboard()
+    elif choice == "Quit":
+        print("Exiting game. Thanks for playing!")
+        exit()
+
+
+if __name__ == "__main__":
+    main()
