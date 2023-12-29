@@ -33,4 +33,8 @@ def get_scoreboard():
 
     return data
 
-get_scoreboard()
+def start_game():
+    clear()
+    # Logic to start the game
+    print("Game starting...")
+
