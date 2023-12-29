@@ -82,3 +82,24 @@ def draw_food(food, term):
         print(term.on_yellow(' '), end='')
 
 
+def check_collision_with_wall(head, term):
+    """
+    Checks if the snake's head has collided with the wall
+    (boundary of the terminal).
+    Returns True if a collision occurred.
+    """
+    return (
+    head.x < 0 or head.x >= term.width or 
+    head.y < 0 or head.y >= term.height
+)
+
+
+
+def check_collision_with_self(head, snake):
+    """
+    Checks if the snake's head has collided with any part of its body.
+    Returns True if a collision occurred.
+    """
+    return head in snake[:-1]
+
+
