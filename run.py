@@ -27,7 +27,7 @@ def get_scoreboard():
     """
     Get the scoreboard from the spreadsheet
     """
-    scoreboard = SHEET.worksheet("scoreboard")
+    scoreboard = SHEET.worksheet("leaderboard")
 
     data = scoreboard.get_all_values()
 
