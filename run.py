@@ -39,3 +39,30 @@ def start_game():
     # Logic to start the game
     print("Game starting...")
 
+
+def show_instructions():
+    clear()
+    # Logic to show game instructions
+    print("\033" +
+          "================= Instructions for Snake Game =================" +
+          "\033")
+    print("\n\033[1mGameplay:\033[0m")
+    print("Your goal is to control the snake and help it eat as many food")
+    print("items as possible. The game continues until the snake either")
+    print("runs into the wall or into itself.")
+    print("Be careful not to run into the walls or the snake's own tail.")
+    print("\033[1mControls:\033[0m")
+    print("- Use the arrow keys to control the direction of the snake.")
+    print("- Press 'P' to pause the game.")
+    print("- Press 'Q' to quit the game and return to the main menu.")
+    print("\n\033" +
+          "===============================================================" +
+          "\033")
+    print("\nPress 'Enter' to return to the main menu.")
+    while True:
+        user_input = input()
+        if user_input == "":
+            break
+        else:
+            break
+    main()
