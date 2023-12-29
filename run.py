@@ -47,9 +47,9 @@ def show_leaderboard():
     print(formatted_scores)
     print("\nPress 'Enter' to return to the main menu.")
     while True:
-        if input() == '':
+        user_input = input("\n")
+        if user_input == "":
             break
-
         else:
             break
     main()
@@ -104,7 +104,7 @@ def start_game():
     if is_score_a_highscore(final_score, leaderboard):
         print(f"\nFinal score: {final_score}")
         print("\nCongratulations, you made it to the leaderboard!")
-        player_name = input(" Enter your name: ")
+        player_name = input("Enter your name:\n")
         update_scoreboard(player_name, final_score)
         exit()
     else:
@@ -136,7 +136,7 @@ def show_instructions():
           "\033")
     print("\nPress 'Enter' to return to the main menu.")
     while True:
-        user_input = input()
+        user_input = input("\n")
         if user_input == "":
             break
         else:
