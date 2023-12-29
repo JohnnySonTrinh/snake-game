@@ -72,3 +72,13 @@ def draw_snake(snake, term):
     head = snake[-1]
     with term.location(head.x, head.y):
         print(term.on_red(' '), end='')
+
+
+def draw_food(food, term):
+    """
+    Draws the food on the terminal using a yellow color.
+    """
+    with term.location(food.x, food.y):
+        print(term.on_yellow(' '), end='')
+
+
