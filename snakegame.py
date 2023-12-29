@@ -58,3 +58,17 @@ def generate_food(snake, term):
         new_food = Point(randrange(1, term.height), randrange(1, term.width))
         if new_food not in snake:
             return new_food
+
+
+def draw_snake(snake, term):
+    """
+    Draws the snake on the terminal.
+    Uses green for the body and red for the head.
+    """
+    for segment in snake:
+        with term.location(segment.x, segment.y):
+            print(term.on_green(' '), end='')
+
+    head = snake[-1]
+    with term.location(head.x, head.y):
+        print(term.on_red(' '), end='')
