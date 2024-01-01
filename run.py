@@ -129,8 +129,6 @@ def show_instructions():
     print("Be careful not to run into the walls or the snake's own tail.")
     print("\033[1mControls:\033[0m")
     print("- Use the arrow keys to control the direction of the snake.")
-    print("- Press 'P' to pause the game.")
-    print("- Press 'Q' to quit the game and return to the main menu.")
     print("\n\033" +
           "===============================================================" +
           "\033")
