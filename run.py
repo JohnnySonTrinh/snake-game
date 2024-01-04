@@ -19,9 +19,7 @@ SHEET = GSPREAD_CLIENT.open("snake-game-scoreboard")
 
 
 def clear():
-    """
-    Clears the terminal screen for both Windows ('cls') and Unix ('clear').
-    """
+    """ Clears the terminal screen for both Windows ('cls') and Unix ('clear'). """
     os.system("cls" if os.name == "nt" else "clear")
 
 
