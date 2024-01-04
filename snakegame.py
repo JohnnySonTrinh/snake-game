@@ -89,9 +89,9 @@ def check_collision_with_wall(head, term):
     Returns True if a collision occurred.
     """
     return (
-    head.x < 0 or head.x >= term.width or 
-    head.y < 0 or head.y >= term.height
-)
+        head.x < 0 or head.x >= term.width or 
+        head.y < 0 or head.y >= term.height
+    )
 
 
 
