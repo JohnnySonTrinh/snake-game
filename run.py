@@ -19,13 +19,17 @@ SHEET = GSPREAD_CLIENT.open("snake-game-scoreboard")
 
 
 def clear():
-    """ Clears the terminal screen for both Windows ('cls') and Unix ('clear'). """
+    """
+    Clears the terminal screen for both
+    Windows ('cls') and Unix ('clear').
+    """
     os.system("cls" if os.name == "nt" else "clear")
 
 
 def get_scoreboard():
     """
-    Retrieves the current leaderboard from the Google Sheets spreadsheet.
+    Retrieves the current leaderboard from
+    the Google Sheets spreadsheet.
     """
     scoreboard = SHEET.worksheet("leaderboard")
 
@@ -35,9 +39,7 @@ def get_scoreboard():
 
 
 def show_leaderboard():
-    """
-    Retrieves and displays the top 10 leaderboard entries.
-    """
+    """ Retrieves and displays the top 10 leaderboard entries. """
     clear()
     scores = get_scoreboard()
     formatted_scores = format_leaderboard(scores)
@@ -54,9 +56,7 @@ def show_leaderboard():
 
 
 def format_leaderboard(data):
-    """
-    Formats the leaderboard data into a readable table format.
-    """
+    """ Formats the leaderboard data into a readable table format. """
     header = "\033[1m{:<30} {:<15}\033[0m".format("Name", "Score")
     divider = "-" * 47
     formatted_data = [header, divider]
