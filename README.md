@@ -19,12 +19,11 @@ Below is the flowchart of the main process of this Python program. It shows the 
 
 I've used the following Python packages and/or external imported packages.
 
-- `gspread`: used with the Google Sheets API
-- `google.oauth2.service_account`: used for the Google Sheets API credentials
-- `time`: used for adding time delays
 - `os`: used for adding a `clear()` function
-- `colorama`: used for including color in the terminal
-- `random`: used to get a random choice from a list
+- `gspread`: used with the Google Sheets API
+- `re`: used regular expressions
+- `google.oauth2.service_account`: used for the Google Sheets API credentials
+- `simple_term_menu`: used for including color in the terminal
 
 ## Testing
 
