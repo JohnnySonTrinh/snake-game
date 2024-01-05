@@ -6,6 +6,36 @@ from simple_term_menu import TerminalMenu
 from snakegame import game_loop
 
 
+def is_valid_name(name):
+    """
+    Validate name: non-empty, letters, and spaces only.
+    """
+    name = name.strip()
+    return bool(name and re.match(r"^[A-Za-z\s]+$", name))
+
+
+def format_name(name):
+    """
+    Strip unnecessary spaces, capitalize the first letter,
+    and make the rest lowercase.
+    """
+    return name.strip().capitalize()
+
+
+def get_player_name():
+    """
+    Prompt the player to enter their name.
+    Validate the name and return the formatted name.
+    """
+    while True:
+        player_name = input("Enter your name:\n").strip()
+        formatted_name = format_name(player_name)
+        if is_valid_name(formatted_name):
+            return formatted_name
+        else:
+            print("Invalid name. Name that contains no numbers or symbols.")
+
+
 # Google Sheets API setup
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -103,7 +133,7 @@ def start_game():
     if is_score_a_highscore(final_score, leaderboard):
         print(f"\nFinal score: {final_score}")
         print("\nCongratulations, you made it to the leaderboard!")
-        player_name = input("Enter your name:\n")
+        player_name = get_player_name()
         update_scoreboard(player_name, final_score)
         exit("\nThanks for playing!")
     else:
