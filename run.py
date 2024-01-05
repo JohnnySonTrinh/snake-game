@@ -117,20 +117,22 @@ def show_instructions():
     the user to return to the main menu.
     """
     clear()
-    print("\033" +
-          "================= Instructions for Snake Game =================" +
-          "\033")
-    print("\n\033[1mGameplay:\033[0m")
-    print("Your goal is to control the snake and help it eat as many food")
-    print("items as possible. The game continues until the snake either")
-    print("runs into the wall or into itself.")
-    print("Be careful not to run into the walls or the snake's own tail.")
-    print("\033[1mControls:\033[0m")
-    print("- Use the arrow keys to control the direction of the snake.")
-    print("\n\033" +
-          "===============================================================" +
-          "\033")
-    print("\nPress 'Enter' to return to the main menu.")
+    print(
+        "\033"
+        "================= Instructions for Snake Game ================="
+        "\033\n"
+        "\n\033[1mGameplay:\033[0m\n"
+        "Your goal is to control the snake and help it eat as many food\n"
+        "items as possible. The game continues until the snake either\n"
+        "runs into the wall or into itself.\n"
+        "Be careful not to run into the walls or the snake's own tail.\n"
+        "\033[1mControls:\033[0m\n"
+        "- Use the arrow keys to control the direction of the snake.\n"
+        "\033\n"
+        "===============================================================\n"
+        "\033\n"
+        "Press 'Enter' to return to the main menu."
+    )
     while True:
         user_input = input("\n")
         if user_input == "":
@@ -147,12 +149,11 @@ def main():
     see the leaderboard, or quit.
     """
     clear()
-    print("\033" +
-          "================================================================")
-    print("                     Welcome to Snake Game!")
-    print("===============================================================" +
-          "\033")
-    print("\nPlease select an option:")
+    print(f"\033"
+          f"============================================================\n"
+          f"                     Welcome to Snake Game!\n"
+          f"============================================================\033\n"
+          f"\nPlease select an option:")
     options = ["Start", "Instructions", "Leaderboards", "Quit"]
     terminal_menu = TerminalMenu(options)
     menu_entry_index = terminal_menu.show()
