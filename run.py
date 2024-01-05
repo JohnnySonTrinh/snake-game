@@ -148,9 +148,8 @@ def show_instructions():
     the user to return to the main menu.
     """
     clear()
-    print(
-        "\033"
-        "================= Instructions for Snake Game ================="
+    print(f"\033"
+        "================= Instructions for Snake Game =================="
         "\033\n"
         "\n\033[1mGameplay:\033[0m\n"
         "Your goal is to control the snake and help it eat as many food\n"
@@ -181,9 +180,10 @@ def main():
     """
     clear()
     print(f"\033"
-          f"============================================================\n"
+          f"=============================================================\n"
           f"                     Welcome to Snake Game!\n"
-          f"============================================================\033\n"
+          f"============================================================"
+          "\033\n"
           f"\nPlease select an option:")
     options = ["Start", "Instructions", "Leaderboards", "Quit"]
     terminal_menu = TerminalMenu(options)
