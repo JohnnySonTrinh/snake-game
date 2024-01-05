@@ -1,5 +1,6 @@
 import os
 import gspread
+import re
 from google.oauth2.service_account import Credentials
 from simple_term_menu import TerminalMenu
 from snakegame import game_loop
