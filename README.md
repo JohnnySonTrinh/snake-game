@@ -4,7 +4,23 @@ This is a simple terminal based snake game implemented in Python. which runs in 
 
 ![screenshot](documentation/mockup.png)
 
-### Flowchart
+## User Stories
+
+### New Users
+- As a new user, I would like to easily understand how to play the game, so that I can start playing without confusion.
+- As a new user, I would like to see the game rules, so that I can learn the gameplay mechanics quickly.
+- As a new user, I would like to view the leaderboard, so that I can see high scores and feel motivated to play.
+- As a new user, I would like to play the game without creating an account, so that I can quickly engage with the game.
+- As a new user, I would like to have a simple and intuitive interface, so that I can navigate the game easily.
+
+### Returning Users
+- As a returning user, I would like to see my previous high scores, so that I can track my progress over time.
+- As a returning user, I would like to have new challenges or levels, so that I can keep the gameplay interesting.
+- As a returning user, I would like to submit my high score, so that I can compete with other players.
+- As a returning user, I would like to receive updates about new features, so that I can stay engaged with the game.
+- As a returning user, I would like to have the option to provide feedback, so that I can contribute to the game's improvement.
+
+## Flowchart
 
 To follow best practice, a flowchart was created for the app's logic,
 and mapped out before coding began using a free version of
