@@ -44,6 +44,24 @@ Below is the [flowchart](https://miro.com/app/board/uXjVN8sQUAI=/?utm_source=sho
 
 ![screenshot](documentation/feature-leaderboard.png)
 
+### Future Features
+
+***Level Progression System***
+
+Implement different levels with increasing difficulty, such as faster speeds, more complex maps, or additional obstacles. Each level could have a unique theme and design.
+
+***Customizable Snake Skins***
+
+Allow players to customize their snake's appearance with different skins, colors, and patterns. This feature could include unlockable skins based on achievements or high scores.
+
+***Power-Ups and Special Items***
+
+Introduce power-ups that temporarily give the snake special abilities, like invincibility, speed boosts, or extra points. These could appear randomly on the map.
+
+***Leaderboard Enhancements***
+
+Develop a more robust leaderboard system that tracks and displays more detailed statistics, such as the longest playtime, highest average score, and most games played.
+
 ### Imports
 
 I've used the following Python packages and/or external imported packages.
