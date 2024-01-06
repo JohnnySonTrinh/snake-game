@@ -157,7 +157,7 @@ def show_instructions():
     """
     clear()
     print(f"""
-======================== Instructions for Snake Game =========================
+======================== Instructions for Snake Game ==========================
 Gameplay:
 Your goal is to control the snake and help it eat as many food
 items as possible. The game continues until the snake either
@@ -165,7 +165,7 @@ runs into the wall or into itself.
 Be careful not to run into the walls or the snake's own tail.
 Controls:
 - Use the arrow keys to control the direction of the snake.
-==============================================================================
+===============================================================================
     """)
     hidden_input = get_hidden_input(f"""
 Press 'Enter' to return to the main menu.
@@ -182,10 +182,10 @@ def main():
     """
     clear()
     print(f"""
-==============================================================================
+  ============================================================================
                             Welcome to Snake Game!
-==============================================================================
-Please select an option:
+  ============================================================================
+  Please select an option:
     """)
     options = ["Start", "Instructions", "Leaderboards", "Quit"]
     terminal_menu = TerminalMenu(options)
