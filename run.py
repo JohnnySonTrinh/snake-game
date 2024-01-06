@@ -147,21 +147,18 @@ def show_instructions():
     the user to return to the main menu.
     """
     clear()
-    print(f"\033"
-        "================= Instructions for Snake Game =================="
-        "\033\n"
-        "\n\033[1mGameplay:\033[0m\n"
-        "Your goal is to control the snake and help it eat as many food\n"
-        "items as possible. The game continues until the snake either\n"
-        "runs into the wall or into itself.\n"
-        "Be careful not to run into the walls or the snake's own tail.\n"
-        "\033[1mControls:\033[0m\n"
-        "- Use the arrow keys to control the direction of the snake.\n"
-        "\033\n"
-        "===============================================================\n"
-        "\033\n"
-        "Press 'Enter' to return to the main menu."
-    )
+    print(f"""
+================= Instructions for Snake Game ==================
+Gameplay:
+Your goal is to control the snake and help it eat as many food
+items as possible. The game continues until the snake either
+runs into the wall or into itself.
+Be careful not to run into the walls or the snake's own tail.
+Controls:
+- Use the arrow keys to control the direction of the snake.
+================================================================
+Press 'Enter' to return to the main menu.
+    """)
     while True:
         user_input = input("\n")
         if user_input == "":
@@ -178,12 +175,12 @@ def main():
     see the leaderboard, or quit.
     """
     clear()
-    print(f"\033"
-          f"=============================================================\n"
-          f"                     Welcome to Snake Game!\n"
-          f"============================================================"
-          "\033\n"
-          f"\nPlease select an option:")
+    print(f"""
+=============================================================
+                    Welcome to Snake Game!
+=============================================================
+Please select an option:
+    """)
     options = ["Start", "Instructions", "Leaderboards", "Quit"]
     terminal_menu = TerminalMenu(options)
     menu_entry_index = terminal_menu.show()
