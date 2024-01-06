@@ -8,11 +8,12 @@ This is a simple terminal based snake game implemented in Python. which runs in 
 
 To follow best practice, a flowchart was created for the app's logic,
 and mapped out before coding began using a free version of
-[Lucidchart](https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning) and/or [Draw.io](https://www.draw.io).
+[Miro](https://miro.com/index/).
 
-Below is the flowchart of the main process of this Python program. It shows the entire cycle of the program.
+Below is the [flowchart](https://miro.com/app/board/uXjVN8sQUAI=/?utm_source=showme&utm_campaign=cpa) of the main process of this Python program. It shows the entire cycle of the program.
 
 ![screenshot](documentation/flowchart.png)
+
 ### Imports
 
 I've used the following Python packages and/or external imported packages.
