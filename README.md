@@ -4,11 +4,6 @@ This is a simple terminal based snake game implemented in Python. which runs in 
 
 ![screenshot](documentation/mockup.png)
 
-
-# Testing
-
-For all testing, please refer to the TESTING.md file.
-
 ### Flowchart
 
 To follow best practice, a flowchart was created for the app's logic,
