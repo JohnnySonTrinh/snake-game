@@ -1,6 +1,7 @@
 import os
 import gspread
 import re
+from time import sleep
 from google.oauth2.service_account import Credentials
 from simple_term_menu import TerminalMenu
 from snakegame import game_loop
@@ -124,10 +125,7 @@ def start_game():
     Starts the snake game, checks the final score,
     and updates the leaderboard if necessary.
     """
-    clear()
     final_score = game_loop()
-    game_loop()
-    clear()
 
     leaderboard = get_scoreboard()
     if is_score_a_highscore(final_score, leaderboard):
@@ -135,11 +133,12 @@ def start_game():
         print("\nCongratulations, you made it to the leaderboard!")
         player_name = get_player_name()
         update_scoreboard(player_name, final_score)
-        exit("\nThanks for playing!")
+        main()
     else:
         print("You didn't make it to the leaderboard. Better luck next time!")
         print(f"Final score: {final_score}")
-        exit("\nThanks for playing!")
+        sleep(3)
+        main()
 
 
 def show_instructions():
