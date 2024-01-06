@@ -30,6 +30,20 @@ Below is the [flowchart](https://miro.com/app/board/uXjVN8sQUAI=/?utm_source=sho
 
 ![screenshot](documentation/flowchart.png)
 
+## Features
+
+- **Start Game:** Jump right into the gameplay.
+
+![screenshot](documentation/feature-start-game.png)
+
+- **View Rules:** Get familiar with the game's rules.
+
+![screenshot](documentation/feature-instruction.png)
+
+- **Leaderboard:** Check out high scores.
+
+![screenshot](documentation/feature-leaderboard.png)
+
 ### Imports
 
 I've used the following Python packages and/or external imported packages.
