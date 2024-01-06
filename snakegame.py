@@ -1,6 +1,6 @@
-from random import randrange
-from collections import namedtuple
 from blessed import Terminal
+from collections import namedtuple
+from random import randrange
 
 
 # Define the basic data structures for the game.

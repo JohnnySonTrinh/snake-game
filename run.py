@@ -1,10 +1,20 @@
+# Standard library imports
 import os
-import gspread
 import re
+import getpass
 from time import sleep
+
+# Related third-party imports
+import gspread
 from google.oauth2.service_account import Credentials
 from simple_term_menu import TerminalMenu
+
+# Local application/library specific imports
 from snakegame import game_loop
+
+
+def get_hidden_input(prompt):
+    return getpass.getpass(prompt)
 
 
 def is_valid_name(name):
@@ -77,13 +87,10 @@ def show_leaderboard():
     formatted_scores = format_leaderboard(scores)
     print("Leaderboard (Top 10):")
     print(formatted_scores)
-    print("\nPress 'Enter' to return to the main menu.")
-    while True:
-        user_input = input("\n")
-        if user_input == "":
-            break
-        else:
-            break
+    hidden_input = get_hidden_input(f"""
+Press 'Enter' to return to the main menu.
+    """)
+    print("You entered:", hidden_input)
     main()
 
 
@@ -129,12 +136,14 @@ def start_game():
 
     leaderboard = get_scoreboard()
     if is_score_a_highscore(final_score, leaderboard):
+        clear()
         print(f"\nFinal score: {final_score}")
         print("\nCongratulations, you made it to the leaderboard!")
         player_name = get_player_name()
         update_scoreboard(player_name, final_score)
         main()
     else:
+        clear()
         print("You didn't make it to the leaderboard. Better luck next time!")
         print(f"Final score: {final_score}")
         sleep(3)
@@ -157,14 +166,11 @@ Be careful not to run into the walls or the snake's own tail.
 Controls:
 - Use the arrow keys to control the direction of the snake.
 ==============================================================================
+    """)
+    hidden_input = get_hidden_input(f"""
 Press 'Enter' to return to the main menu.
     """)
-    while True:
-        user_input = input("\n")
-        if user_input == "":
-            break
-        else:
-            break
+    print("You entered:", hidden_input)
     main()
 
 
@@ -193,6 +199,7 @@ Please select an option:
     elif choice == "Leaderboards":
         show_leaderboard()
     elif choice == "Quit":
+        clear()
         print("Exiting game. Thanks for playing!, created by: Johnny")
         exit()
 
