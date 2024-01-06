@@ -10,6 +10,15 @@ Food = Point(randrange(10), randrange(10))  # Initial food position
 Direction = namedtuple('Direction', ['y', 'x'])  # Represents a direction.
 direction = Direction(0, 1)  # Initial direction: right
 
+def update_variables():
+    """
+    Updates the global variables used by the game.
+    """
+    global Snake, Food, direction
+    Snake = [Point(5, 5), Point(5, 6), Point(5, 7)]  # Initial snake position
+    Food = Point(randrange(10), randrange(10))  # Initial food position
+    direction = Direction(0, 1)  # Initial direction: right
+
 
 def move_snake(snake, direction):
     """
@@ -142,9 +151,5 @@ def game_loop():
 
             if (check_collision_with_wall(next_head, term) or 
             check_collision_with_self(next_head, Snake)):
+                update_variables()
                 return score
-
-
-
-if __name__ == '__main__':
-    game_loop()
