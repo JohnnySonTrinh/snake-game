@@ -62,6 +62,17 @@ Introduce power-ups that temporarily give the snake special abilities, like invi
 
 Develop a more robust leaderboard system that tracks and displays more detailed statistics, such as the longest playtime, highest average score, and most games played.
 
+## Tools & Technologies Used
+
+- [HTML](https://en.wikipedia.org/wiki/HTML) Utilized for structuring the main content of the site.
+- [CSS](https://en.wikipedia.org/wiki/CSS) Employed for styling the website. 
+- [JavaScript](http://www.javascript.com) Intergral for creating ineractive elements on the site.
+- [Python](http://python.org) Used to develop server-side logic and game functions.
+- [Git](http://git-scm.com) A version control system used to track changes in the codebase.
+- [GitHub](http://github.com) Provides secure online storage for the project's code.
+- [Visual Studio Code](http://code.visualstudio.com) Served as the Intergrated Development Environment (IDE) for the project.
+- [Heroku](http://heroku.com) A cloud platform used for hosting the deployed back-end of the site.
+
 ### Imports
 
 I've used the following Python packages and/or external imported packages.
