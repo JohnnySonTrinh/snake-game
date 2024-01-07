@@ -83,6 +83,57 @@ I've used the following Python packages and/or external imported packages.
 - `google.oauth2.service_account`: used for the Google Sheets API credentials
 - `simple_term_menu`: used for including color in the terminal
 
+### Classes & Functions
+The snake game is developed using a procedural programming approach with a focus on functions. Below are the primary functions used in the application.
+
+**Functions**
+
+- `update_variables()`
+	- Initializes or resets the game's global variables, including the snake's position, food's position, and the initial direction.
+	
+- `move_snake(snake, direction)`
+	- Moves the snake in the specified direction by adding a new head and removing the tail.
+
+- `check_food(snake, food)`
+	- Checks if the snake's head has reached the food's position, indicating that the food has been eaten.
+
+- `get_direction(key, current_direction)`
+	- Changes the snake's direction based on the user's key input, ensuring the snake does not reverse into itself.
+
+- `generate_food(snake, term)`
+	- Generates a new piece of food at a random location on the terminal that is not occupied by the snake.
+
+- `draw_snake(snake, term)`
+	- Renders the snake on the terminal, using different colors for the body and the head.
+
+- `draw_food(food, term)`
+	- Draws the food on the terminal using a specific color.
+
+- `check_collision_with_wall(head, term)`
+	- Checks if the snake's head has collided with the wall (boundary of the terminal).
+
+- `check_collision_with_self(head, snake)`
+	- Determines if the snake's head has collided with any part of its body.
+
+- `game_loop()`
+	- The main game loop that handles key inputs, updates the game state, draws the game elements, and checks for game over conditions. It also returns the final score when the game ends.
+
+**Data Structures**
+
+- `Point`
+	- A named tuple used to represent a point on the screen, with 'y' and 'x' as its elements.
+
+- `Snake`
+	- A list of Point objects representing the initial position of the snake.
+
+- `Food`
+	- A Point object representing the initial position of the food.
+
+- `Direction`
+	- A named tuple used to represent the direction of movement, with 'y' and 'x' as its elements.
+
+These functions and data structures work together to create the interactive gameplay of the snake game. The game is controlled through the terminal, where the player navigates the snake to eat food while avoiding collisions with the walls or itself.
+
 ## Testing
 
 For all testing, please refer to the [TESTING.md](TESTING.md) file.
