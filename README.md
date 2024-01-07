@@ -228,3 +228,28 @@ You can fork this repository by using the following steps:
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JohnnySonTrinh/snake-game)
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+
+### Local VS Deployment
+
+**Local Development**
+
+- `Environment Setup:` The local development was carried out in a controlled environment, typically on a personal computer. This setup allowed for quick testing and debugging.
+
+- `Access and Testing:` The game was accessible only on the developer's machine, making it convenient for rapid iterations and immediate feedback during the development process.
+
+- `Debugging Tools:` Local development provided the advantage of using comprehensive debugging tools and IDE features, which facilitated efficient problem-solving and code optimization.
+
+- `Configuration:` The local setup might have included specific configurations and dependencies that were tailored to the developer's machine and might not be present in the production environment.
+
+**Live Deployment**
+
+- `Hosting Platform:` The live version of the game was deployed on Heroku, a cloud platform service that enables developers to build, run, and operate applications entirely in the cloud.
+
+- `Accessibility:` Once deployed, the game became publicly accessible, allowing users from anywhere to interact with it, unlike the local version which was confined to the developer's machine.
+
+- `Environment Consistency:` The deployment on Heroku ensured that the game ran in a consistent environment, which might differ from the local development environment in terms of operating system, available libraries, and other factors.
+
+- `Performance Considerations:` In the live deployment, performance and resource utilization became more critical, as the application needed to be optimized for efficient functioning in the cloud environment.
+
+- `Monitoring and Maintenance:` Post-deployment, the focus shifted to monitoring the application’s performance, fixing bugs, and updating features based on user feedback.
+
