@@ -253,3 +253,22 @@ You can fork this repository by using the following steps:
 
 - `Monitoring and Maintenance:` Post-deployment, the focus shifted to monitoring the application’s performance, fixing bugs, and updating features based on user feedback.
 
+## Credits
+
+This section acknowledges the sources and inspirations that contributed to the development of the Snake Game project. Proper credit is given to the original creators and resources that played a pivotal role in shaping this project.
+
+**Code Inspiration**
+
+`Blessed Library's Worms Game:` The game logic for the Snake Game was significantly inspired by the Worms game example from the Blessed Python library. The original code can be found at Blessed Worms Game. This example served as a pseudo-code reference, guiding the development of the game mechanics and functionality in the Snake Game.
+Additional Resources
+Python Documentation: The official Python documentation was frequently consulted for understanding various Python features and libraries used in the project.
+
+`GitHub Community:` The open-source community on GitHub provided valuable insights and code snippets that were instrumental in solving specific coding problems encountered during development.
+
+### Acknowledgements
+
+- I would like to thank my Mentor, [Julia Konovalova](https://github.com/IuliiaKonovalova), for her invaluable support and guidance throughout the development of this project. Her expertise and insights have been crucial in overcoming challenges and enhancing the overall quality of the game.
+
+- Special thanks to my family and friends for their understanding and support during the times when I was fully immersed in the development process. Their encouragement and belief in my abilities have been a constant source of motivation.
+
+- I appreciate the resources and tutorials available online that have helped me acquire new skills and knowledge essential for this project. The open-source community and various educational platforms have been instrumental in my journey as a developer.
